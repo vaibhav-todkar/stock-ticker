@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  stock-ticker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: stock-ticker:latest
+    container_name: stock-ticker
+    restart: unless-stopped
+    environment:
+      - FINNHUB_API_KEY=${FINNHUB_API_KEY}
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./config.yaml:/app/config.yaml:ro
