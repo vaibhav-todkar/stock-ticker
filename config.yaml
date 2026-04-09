@@ -1,0 +1,21 @@
+api:
+  base_url: "https://finnhub.io/api/v1"
+  # api_key is loaded from the FINNHUB_API_KEY environment variable.
+  # Do NOT set it here in production.
+  api_key: ""
+  symbols:
+    - AAPL
+    - GOOGL
+    - MSFT
+    - TSLA
+    - AMZN
+  poll_interval: 10s
+  timeout: 10s
+  max_retries: 3
+
+server:
+  port: 8080
+
+logging:
+  level: info
+  format: json
